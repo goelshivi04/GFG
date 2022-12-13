@@ -29,4 +29,39 @@ int main()
     cout<<ans;
     return 0;
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Optimized Approach
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int f(int a[],int n)
+{
+    int sum=0,lsum=0;
+    for(int i=0;i<n;i++)
+    sum+=a[i];
+    for(int i=0;i<n;i++)
+    {
+        sum-=a[i];
+        if(sum==lsum)
+        return i;
+        lsum+=a[i];
+    }
+    return -1;
+}
+
+int main()
+{
+    int a[]={-7,1,5,2,-4,3,0};
+    int n=7;
+    int ans=f(a,n);
+    cout<<ans;
+    return 0;
+}
+
+
+
+
+
 
